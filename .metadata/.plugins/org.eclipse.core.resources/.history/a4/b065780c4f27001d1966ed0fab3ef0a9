@@ -1,0 +1,5 @@
+package demo.ex01;
+
+public class QueueReceiver {
+
+}

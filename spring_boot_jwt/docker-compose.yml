@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  postgres-local:
+    image: "postgres:latest"
+    container_name: postgres-local
+    ports:
+      - "5432:5432"
+    volumes:
+      - "./docker/postgres:/home/postgreslocal/data"
+    working_dir: /home/postgreslocal
+    environment:
+      - POSTGRES_PASSWORD=huyhoang14901
+      - POSTGRES_HOST_AUTH_METHOD=trust
