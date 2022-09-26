@@ -8,4 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Repository
 @Transactional
 public interface NhanVienRepository extends JpaRepository<NhanVien, Long> {
+	@Query(value = "SELECT * FROM MayBay u WHERE u.GaDen = "DAD", 
+			nativeQuery = true)
+	Collection<User> findDiemDenDaLat();
 }

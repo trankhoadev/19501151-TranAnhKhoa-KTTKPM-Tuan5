@@ -7,5 +7,6 @@ import java.util.List;
 
 public interface NhanVienService {
     public List<NhanVien> findAll();
-    public NhanVien findNhanVienByMaNV(Long id);
+    public NhanVien findNhanVienById(Long id);
+    public NhanVien getDiemDenChuyenBay(String diemDen);
 }

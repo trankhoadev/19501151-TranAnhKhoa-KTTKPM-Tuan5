@@ -28,7 +28,13 @@ public class NhanVienController {
 	/* Get data by ID */
     @GetMapping("/{id}")
     public ResponseEntity<NhanVien> findNhanVienById(@PathVariable(value = "id") long id) {
-    	Optional<NhanVien> nv = 
-    }
-    
+    	Optional<NhanVien> nv = nhanVienService.findById(id);
+    	
+    	if(nv.isPresent()) {
+    		return nhanVienService.ok().body(nv.get));
+    	}
+    	else {
+    		return nhanVienService.notFound().build();
+    	}
+    } 
 }
